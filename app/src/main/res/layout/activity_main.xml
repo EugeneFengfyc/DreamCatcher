@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-
+<!--        android:name="edu.vt.cs5254.dreamcatcher.DreamDetailFragment"-->
+<!--    android:name="edu.vt.cs5254.dreamcatcher.DreamListFragment"-->
 
 </androidx.fragment.app.FragmentContainerView>
