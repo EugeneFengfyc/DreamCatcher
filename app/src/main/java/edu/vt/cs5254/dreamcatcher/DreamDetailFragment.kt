@@ -16,6 +16,7 @@ import junit.framework.Assert.format
 import java.lang.String.format
 import java.text.DateFormat
 import java.text.MessageFormat.format
+import java.text.SimpleDateFormat
 import java.util.*
 
 class DreamDetailFragment : Fragment() {
@@ -66,7 +67,9 @@ class DreamDetailFragment : Fragment() {
 
             lastUpdatedText.apply {
                 val currDate = viewModel.dream.lastUpdated
-                //text = DateFormat.format("yyyy-MM-dd 'at' hh:mm:ss a", currDate)
+                val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss a").format(currDate)
+                text = "Last Updated " + simpleDateFormat
+                //text = DateFormat.format("yyyy.MM.dd 'at' HH:mm:ss", currDate)
             }
 
             fulfilledCheckbox.apply {

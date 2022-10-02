@@ -13,5 +13,7 @@
     <string name="entry_button_2">Reflection Two</string>
     <string name="entry_button_3">DEFERRED</string>
     <string name="entry_button_4">button4</string>
+    
+    <string name="dream_reflection_count">Reflections: %1$d</string>
 
 </resources>

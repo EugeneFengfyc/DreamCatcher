@@ -8,13 +8,15 @@ import edu.vt.cs5254.dreamcatcher.databinding.FragmentDreamListBinding
 import edu.vt.cs5254.dreamcatcher.databinding.ListItemDreamBinding
 
 class DreamHolder(
-    val binding: ListItemDreamBinding
+    private val binding: ListItemDreamBinding
 ) : RecyclerView.ViewHolder(binding.root){
     fun bind(dream: Dream) {
         binding.listItemTitle.text = dream.title
 
-        var count = dream.entries.count().toString()
-        binding.listItemReflectionCount.text = "Reflections: ${count} "
+        val count = dream.entries.filter { it.kind == DreamEntryKind.REFLECTION }
+            .count()
+        //binding.listItemReflectionCount.text = "Reflections: ${count} "
+        binding.listItemReflectionCount.text = binding.root.context.getString(R.string.dream_reflection_count, count)
 
         if (dream.isFulfilled) {
             binding.listItemImage.setImageResource(R.drawable.dream_fulfilled_icon)
