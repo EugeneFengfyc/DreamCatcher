@@ -15,7 +15,7 @@ class DreamHolder(
 
         val count = dream.entries.filter { it.kind == DreamEntryKind.REFLECTION }
             .count()
-        //binding.listItemReflectionCount.text = "Reflections: ${count} "
+
         binding.listItemReflectionCount.text = binding.root.context.getString(R.string.dream_reflection_count, count)
 
         if (dream.isFulfilled) {
